@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Your Name — Portfolio</title>
+  <meta name="description" content="Personal portfolio.">
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Your Name — Portfolio">
+  <meta property="og:description" content="Personal portfolio.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800&display=swap">
+  <link rel="stylesheet" href="./assets/css/style.css">
+</head>
+<body>
+  <header class="site-header">
+    <div class="header-inner">
+      <a class="brand" href="#home">Your Name</a>
+      <nav class="primary-nav" aria-label="Primary navigation">
+        <a href="#about">About</a>
+        <a href="#skills">Skills</a>
+        <a href="#projects">Projects</a>
+        <a href="#experience">Experience</a>
+        <a href="#contact">Contact</a>
+      </nav>
+    </div>
+  </header>
+
+  <main id="home">
+    <section class="hero">
+      <div class="container hero-grid">
+        <div class="hero-copy">
+          <p class="eyebrow">PORTFOLIO</p>
+          <h1>Your Name</h1>
+          <p class="lead">직무 타이틀을 여기에 넣어주세요. 예: Backend Developer, AI Engineer, Full-stack Developer</p>
+          <p class="summary">
+            한 줄 소개를 조금 더 풀어 쓰는 자리입니다. 어떤 문제를 좋아하고, 어떤 방식으로 일하는 사람인지
+            담백하게 보여주면 좋습니다.
+          </p>
+          <div class="hero-actions" aria-label="Profile links">
+            <a href="mailto:your.email@example.com">Email</a>
+            <a href="https://github.com/your-id" target="_blank" rel="noopener">GitHub</a>
+            <a href="#" aria-disabled="true">Resume</a>
+          </div>
+        </div>
+        <div class="profile-card" aria-label="Profile image placeholder">
+          <div class="profile-avatar">YN</div>
+          <p>프로필 사진은 나중에<br>assets/img/profile.jpg로 교체</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="block" id="about">
+      <div class="container two-col">
+        <div>
+          <h2>About</h2>
+        </div>
+        <div class="section-body">
+          <p>
+            자기소개 초안 자리입니다. 전공, 관심 분야, 개발 성향, 현재 집중하고 있는 기술을 4~6문장 정도로
+            정리하면 좋습니다.
+          </p>
+          <p>
+            너무 거창하게 쓰기보다, “무엇을 만들었고 무엇을 배웠는지”가 보이게 쓰면 포트폴리오 전체가
+            훨씬 신뢰감 있게 느껴집니다.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <section class="block" id="skills">
+      <div class="container">
+        <h2>Skills</h2>
+        <div class="skill-grid">
+          <div class="skill-group">
+            <h3>Languages</h3>
+            <div class="chip-row">
+              <span>Python</span>
+              <span>JavaScript</span>
+              <span>TypeScript</span>
+              <span>Java</span>
+            </div>
+          </div>
+          <div class="skill-group">
+            <h3>Frameworks</h3>
+            <div class="chip-row">
+              <span>React</span>
+              <span>Node.js</span>
+              <span>Spring</span>
+              <span>FastAPI</span>
+            </div>
+          </div>
+          <div class="skill-group">
+            <h3>Tools</h3>
+            <div class="chip-row">
+              <span>Git</span>
+              <span>Docker</span>
+              <span>MySQL</span>
+              <span>AWS</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="block" id="projects">
+      <div class="container">
+        <div class="section-head">
+          <h2>Projects</h2>
+          <p>대표 프로젝트 2~5개를 넣는 영역입니다.</p>
+        </div>
+        <div class="project-grid">
+          <article class="project-card">
+            <div class="project-top">
+              <h3>Project Name 01</h3>
+              <span class="period">2026</span>
+            </div>
+            <p>프로젝트를 한 문장으로 설명합니다. 사용자가 보는 문제와 내가 만든 해결책이 드러나면 좋습니다.</p>
+            <div class="chip-row small">
+              <span>React</span>
+              <span>Node.js</span>
+              <span>MySQL</span>
+            </div>
+            <ul>
+              <li>내가 맡은 역할과 핵심 기여를 적는 자리</li>
+              <li>성과나 배운 점이 있으면 짧게 추가</li>
+            </ul>
+            <div class="card-links">
+              <a href="#" aria-disabled="true">Demo</a>
+              <a href="#" aria-disabled="true">GitHub</a>
+            </div>
+          </article>
+
+          <article class="project-card">
+            <div class="project-top">
+              <h3>Project Name 02</h3>
+              <span class="period">2025</span>
+            </div>
+            <p>두 번째 프로젝트 자리입니다. 팀 프로젝트라면 팀 규모와 본인 담당 영역을 꼭 적어주세요.</p>
+            <div class="chip-row small">
+              <span>Python</span>
+              <span>FastAPI</span>
+              <span>Docker</span>
+            </div>
+            <ul>
+              <li>구현한 기능, 설계한 구조, 해결한 문제</li>
+              <li>수치화 가능한 결과가 있으면 여기에 배치</li>
+            </ul>
+            <div class="card-links">
+              <a href="#" aria-disabled="true">Demo</a>
+              <a href="#" aria-disabled="true">GitHub</a>
+            </div>
+          </article>
+
+          <article class="project-card muted">
+            <div class="project-top">
+              <h3>Upcoming / Draft Project</h3>
+              <span class="period">TBD</span>
+            </div>
+            <p>아직 정리 전인 프로젝트를 임시로 넣는 자리입니다. 나중에 삭제하거나 실제 프로젝트로 바꿉니다.</p>
+            <div class="chip-row small">
+              <span>Planning</span>
+              <span>WIP</span>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="block" id="experience">
+      <div class="container">
+        <div class="section-head">
+          <h2>Experience</h2>
+          <p>경력, 학력, 활동, 공모전 등을 톤을 나눠서 정리합니다.</p>
+        </div>
+        <div class="timeline">
+          <article class="timeline-item">
+            <div class="timeline-date">YYYY.MM - YYYY.MM</div>
+            <div>
+              <h3>Organization / School</h3>
+              <p>역할 또는 전공. 무엇을 했는지 1~2줄로 요약합니다.</p>
+            </div>
+          </article>
+          <article class="timeline-item">
+            <div class="timeline-date">YYYY.MM</div>
+            <div>
+              <h3>Idea Competition / Activity</h3>
+              <p>
+                결과 발표 전인 공모전은 수상 이력처럼 쓰지 않고, 아이디어 기획 또는 참여 활동으로 낮은 톤에
+                배치합니다.
+              </p>
+              <span class="status-pill">Result pending</span>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="block contact-block" id="contact">
+      <div class="container contact-card">
+        <div>
+          <h2>Contact</h2>
+          <p>협업, 채용, 프로젝트 이야기는 아래 링크로 연락 주세요.</p>
+        </div>
+        <div class="contact-links">
+          <a href="mailto:your.email@example.com">your.email@example.com</a>
+          <a href="https://github.com/your-id" target="_blank" rel="noopener">github.com/your-id</a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container">© <span id="year"></span> Your Name</div>
+  </footer>
+
+  <script src="./assets/js/main.js"></script>
+</body>
+</html>
