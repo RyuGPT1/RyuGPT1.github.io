@@ -1,29 +1,30 @@
-# Portfolio
+# Donghyeon Ryu Portfolio
 
-Server-free personal portfolio skeleton inspired by the structure of
-Stillrot/Stillrot.github.io, simplified into a single static page.
+AI, data, and service-oriented projects by Donghyeon Ryu.
 
-## Structure
+This portfolio introduces projects around safety, public data, AI agents, dashboards, and computer vision. It includes a static portfolio page, project detail pages, and a downloadable resume.
 
-```text
-index.html
-assets/
-  css/style.css
-  js/main.js
-  img/
-```
+## Pages
 
-Open `index.html` directly in a browser. No local server is required because the
-page does not use `fetch()` or external JSON files.
+- `index.html` — main portfolio
+- `projects/index.html` — project details
+- `resume/index.html` — resume page
+- `resume/resume.pdf` — downloadable resume
 
-## Next Content To Fill
+## Featured Projects
 
-- Name
-- Job title
-- One-line introduction
-- Short About text
-- Skills to keep/remove
-- 2-5 projects
-- Experience, education, activities
-- Email, GitHub, LinkedIn/blog links
-- Optional profile photo at `assets/img/profile.jpg`
+- **Subscription Management Agent** — Discord bot and dashboard for subscription tracking
+- **Construction Site PPE Detection** — YOLO-based safety equipment detection
+- **LoopBin** — AIoT platform for clothing collection bin monitoring and route planning
+
+## Tech Stack
+
+- Python, FastAPI, Streamlit
+- YOLO, OpenAI API, Data Analysis
+- React, PostgreSQL, Plotly, Pydeck
+- GitHub Pages
+
+## Links
+
+- Portfolio: https://ryugpt1.github.io
+- GitHub: https://github.com/RyuGPT1
