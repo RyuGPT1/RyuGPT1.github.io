@@ -140,4 +140,62 @@
     const initial = decodeURIComponent(window.location.hash.slice(1)) || projectTabs[0].dataset.projectTab;
     activateProject(initial);
   }
+
+  const experienceList = document.querySelector('[data-experience-list]');
+  const experienceToggle = document.querySelector('[data-experience-toggle]');
+
+  if (experienceList && experienceToggle) {
+    experienceToggle.addEventListener('click', () => {
+      const isCollapsed = experienceList.classList.toggle('is-collapsed');
+      experienceToggle.setAttribute('aria-expanded', isCollapsed ? 'false' : 'true');
+      experienceToggle.querySelector('span').textContent = isCollapsed ? '전체보기' : '접기';
+    });
+  }
+
+  const pdfDownload = document.querySelector('[data-pdf-download]');
+  if (pdfDownload) {
+    function downloadPdfBlob(blob) {
+      const url = URL.createObjectURL(blob);
+      const link = document.createElement('a');
+      link.href = url;
+      link.download = pdfDownload.getAttribute('download') || 'resume.pdf';
+      document.body.appendChild(link);
+      link.click();
+      link.remove();
+      URL.revokeObjectURL(url);
+    }
+
+    function base64ToBlob(base64, type) {
+      const bytes = atob(base64);
+      const chunks = [];
+      for (let index = 0; index < bytes.length; index += 8192) {
+        const slice = bytes.slice(index, index + 8192);
+        const values = new Uint8Array(slice.length);
+        for (let i = 0; i < slice.length; i += 1) values[i] = slice.charCodeAt(i);
+        chunks.push(values);
+      }
+      return new Blob(chunks, { type });
+    }
+
+    pdfDownload.addEventListener('click', async (event) => {
+      event.preventDefault();
+
+      try {
+        const embeddedPdf = document.getElementById('resume-pdf-data');
+        const base64 = window.RESUME_PDF_BASE64 || (embeddedPdf && embeddedPdf.textContent.trim());
+        if (base64) {
+          downloadPdfBlob(base64ToBlob(base64, 'application/pdf'));
+          return;
+        }
+
+        const response = await fetch(pdfDownload.href);
+        if (!response.ok) throw new Error('PDF download failed');
+
+        const blob = await response.blob();
+        downloadPdfBlob(blob);
+      } catch (error) {
+        window.location.href = pdfDownload.href;
+      }
+    });
+  }
 })();
