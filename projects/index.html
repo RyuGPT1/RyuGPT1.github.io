@@ -36,21 +36,192 @@
     <section class="project-detail-section">
       <div class="container">
         <div class="project-selector" role="tablist" aria-label="Project selector">
-          <button class="project-tab theme-subscribe active" type="button" data-project-tab="subscribe" role="tab" aria-selected="true">
+          <button class="project-tab theme-safefit active" type="button" data-project-tab="safefit" role="tab" aria-selected="true">
+            <strong>SafeFit AI</strong>
+            <span>작업 전 안전지식 점검 및 투입 적합도 판단 보조 시스템</span>
+          </button>
+          <button class="project-tab theme-ppe" type="button" data-project-tab="ppe" role="tab" aria-selected="false">
+            <strong>산업현장 PPE 탐지</strong>
+            <span>YOLO 기반 안전모-안전조끼 착용 여부 탐지 시스템</span>
+          </button>
+          <button class="project-tab theme-subscribe" type="button" data-project-tab="subscribe" role="tab" aria-selected="false">
             <strong>구독 관리 에이전트</strong>
             <span>Discord 봇과 대시보드로 구독 정보를 관리하는 AI 서비스</span>
           </button>
-          <button class="project-tab theme-ppe" type="button" data-project-tab="ppe" role="tab" aria-selected="false">
-            <strong>건설현장 PPE 탐지</strong>
-            <span>YOLO 기반 안전모-안전조끼 착용 여부 탐지 시스템</span>
-          </button>
-          <button class="project-tab theme-loopbin" type="button" data-project-tab="loopbin" role="tab" aria-selected="false">
-            <strong>LoopBin</strong>
-            <span>AIoT 의류 수거함 적재 예측 및 운영 관리 플랫폼</span>
-          </button>
         </div>
 
-        <article class="project-panel theme-subscribe active" data-project-panel="subscribe" id="subscribe" role="tabpanel">
+        <article class="project-panel theme-safefit active" data-project-panel="safefit" id="safefit" role="tabpanel">
+          <div class="project-panel-head">
+            <div>
+              <p class="eyebrow">2026 - AI SAFETY SERVICE</p>
+              <h2>SafeFit AI</h2>
+              <p>AI 기반 작업 전 안전지식 점검 및 작업자 투입 적합도 판단 보조 시스템</p>
+            </div>
+            <a class="panel-link" href="https://github.com/RyuGPT1/SafeFit_AI" target="_blank" rel="noopener">GitHub</a>
+          </div>
+
+          <div class="project-phase-list">
+            <section class="project-phase">
+              <div class="phase-copy">
+                <h3><span>1</span>산업안전 문제 정의와 서비스 목표</h3>
+                <h4>문제 배경</h4>
+                <ul>
+                  <li>작업 전 안전교육이 있어도 작업자별 취약 위험요인과 이해 수준을 파악하기 어려움</li>
+                  <li>고소작업, 지게차, 밀폐공간, 전기 작업처럼 치명도가 높은 작업은 투입 전 지식 점검이 중요</li>
+                  <li>단순 출석형 교육보다 작업 내용에 맞춘 이해도 확인과 관리자 판단 근거가 필요</li>
+                </ul>
+                <h4>서비스 목표</h4>
+                <ul>
+                  <li>관리자가 입력한 작업 내용을 AI가 위험요인, 절차, 법규, 필요한 안전지식으로 분해</li>
+                  <li>작업자는 모바일 웹에서 퀴즈를 응시하고 관리자는 PC 대시보드에서 투입 적합도를 확인</li>
+                </ul>
+              </div>
+              <figure class="project-visual project-visual-wide">
+                <img src="../assets/img/projects/safefit-architecture.png" alt="SafeFit AI 시스템 구조도">
+                <figcaption>관리자 PC 웹, 작업자 모바일 웹, Backend API, AI 분석 서비스, 검증형 문제은행을 연결한 SafeFit AI 구조</figcaption>
+              </figure>
+            </section>
+
+            <section class="project-phase">
+              <div class="phase-copy">
+                <h3><span>2</span>검증형 문제은행과 AI 분석 흐름</h3>
+                <h4>핵심 설계</h4>
+                <ul>
+                  <li>운영 중 AI가 즉석으로 문제를 생성하지 않고 사전 검증된 문제은행에서 선별 출제</li>
+                  <li>KOSHA 사고사례, 산업안전 법령/기준, 산업재해 통계 기반으로 문제은행 구축</li>
+                  <li>문항마다 작업 태그, 위험유형, 난이도, 위험도, 평가역량을 연결해 취약점을 분석</li>
+                </ul>
+                <h4>AI 적용 방식</h4>
+                <ul>
+                  <li>작업 내용을 절차, 역할, 장비, 사고유형, 위험요인으로 세분화</li>
+                  <li>오답 패턴, 고위험 문항 오답, Near-Miss 판단력을 바탕으로 관리자 요약 리포트 생성</li>
+                </ul>
+              </div>
+              <div class="phase-note">
+                <strong>핵심 역할</strong>
+                <p>혼자 진행하는 프로젝트로, 문제 정의부터 서비스 구조, AI 분석 로직, 관리자/작업자 화면 흐름까지 전체 기획과 구현을 담당</p>
+                <ul>
+                  <li>문제은행 기반 출제와 작업자별 취약 태그 분석 로직 설계</li>
+                  <li>FastAPI 백엔드, PostgreSQL 데이터 구조, AI 분석 요청 흐름 구성</li>
+                  <li>최종 투입 판단은 관리자가 수행하고 AI는 근거를 제공하는 보조 구조로 설계</li>
+                </ul>
+              </div>
+            </section>
+
+            <section class="project-phase">
+              <div class="phase-copy">
+                <h3><span>3</span>MVP 기능과 확장 방향</h3>
+                <h4>MVP 기능</h4>
+                <ul>
+                  <li>관리자 작업 등록, 문제 추천, 작업자 퀴즈 세션 생성</li>
+                  <li>모바일 선택형 퀴즈 응시, 자동 채점, 해설 및 재시험 흐름</li>
+                  <li>대시보드에서 점수, 취약 영역, 고위험 오답, 투입 적합도 등급 확인</li>
+                </ul>
+                <h4>확장 방향</h4>
+                <ul>
+                  <li>현장별 커스텀 문제, 얼굴인식 본인확인, STT 음성 응답, 교육 시스템 연동</li>
+                  <li>법령/통계 데이터 재수집으로 문제은행 갱신 필요 문항 표시</li>
+                </ul>
+              </div>
+              <div class="phase-stack">
+                <h4>Stack</h4>
+                <div class="chip-row small"><span>React</span><span>FastAPI</span><span>PostgreSQL</span><span>OpenAI API</span><span>LangChain</span><span>LangGraph</span></div>
+                <h4>Service Flow</h4>
+                <ol class="mini-flow">
+                  <li>관리자가 작업 내용을 입력하면 AI가 위험요인과 안전지식을 분석</li>
+                  <li>문제은행에서 작업 관련 문항과 취약 영역 보완 문항을 조합</li>
+                  <li>작업자가 모바일 퀴즈를 응시하고 관리자가 투입 적합도와 주의점을 확인</li>
+                </ol>
+              </div>
+            </section>
+          </div>
+        </article>
+
+        <article class="project-panel theme-ppe" data-project-panel="ppe" id="ppe" role="tabpanel">
+          <div class="project-panel-head">
+            <div>
+              <p class="eyebrow">2026 - COMPUTER VISION</p>
+              <h2>산업현장 PPE 탐지</h2>
+              <p>산업현장 이미지에서 안전모와 안전조끼 착용 여부를 탐지하는 YOLO 기반 시스템</p>
+            </div>
+            <a class="panel-link" href="https://github.com/RyuGPT1/minipr1_7" target="_blank" rel="noopener">GitHub</a>
+          </div>
+
+          <div class="project-phase-list">
+            <section class="project-phase">
+              <div class="phase-copy">
+                <h3><span>1</span>현장 안전 문제 정의</h3>
+                <h4>문제 배경</h4>
+                <ul>
+                  <li>안전모와 안전조끼 착용 여부는 반복 확인이 필요하지만 육안 점검은 누락 가능성이 있음</li>
+                  <li>CCTV가 있어도 미착용 상태를 자동 판별하지 못하면 사후 확인에 그칠 수 있음</li>
+                  <li>작업자 단위로 보호구 미착용 상태를 정리하는 탐지 흐름이 필요</li>
+                </ul>
+                <h4>탐지 클래스</h4>
+                <ul>
+                  <li>Hardhat, NO-Hardhat, Safety Vest, NO-Safety Vest, Person 5개 클래스로 구성</li>
+                </ul>
+              </div>
+              <figure class="project-visual">
+                <img src="../assets/img/projects/ppe-interface.jpg" alt="산업현장 PPE 탐지 시스템 인터페이스">
+                <figcaption>이미지-동영상-웹캠 입력을 한 화면에서 처리하는 PPE 탐지 시스템 인터페이스</figcaption>
+              </figure>
+            </section>
+
+            <section class="project-phase">
+              <div class="phase-copy">
+                <h3><span>2</span>YOLO 추론과 후처리 설계</h3>
+                <h4>구현 방식</h4>
+                <ul>
+                  <li>YOLO 모델로 Person, Hardhat, NO-Hardhat, Safety Vest, NO-Safety Vest 감지</li>
+                  <li>사람 박스 기준으로 헬멧은 상단, 조끼는 몸통 영역의 박스만 상태 후보로 사용</li>
+                  <li>착용/미착용 박스가 겹치면 confidence를 비교해 상태를 정리</li>
+                  <li>조끼 착용 박스는 신뢰도가 낮을 때 색상 기준을 보조로 활용해 오탐을 완화</li>
+                </ul>
+              </div>
+              <div class="phase-note">
+                <strong>핵심 역할</strong>
+                <p>모델 결과를 그대로 보여주지 않고, 안전관리자가 판단하기 쉬운 작업자별 상태로 재구성</p>
+                <ul>
+                  <li>Person 박스 기준으로 보호구 탐지 결과를 작업자별 상태로 묶는 후처리 설계</li>
+                  <li>헬멧은 상단, 조끼는 몸통 영역 중심으로 판단해 오탐을 줄이는 규칙 적용</li>
+                  <li>이미지-영상-웹캠 입력에서 같은 방식으로 결과를 확인하도록 UI 구성</li>
+                </ul>
+              </div>
+            </section>
+
+            <section class="project-phase">
+              <div class="phase-copy">
+                <h3><span>3</span>시연 기능과 한계 분석</h3>
+                <h4>구현 기능</h4>
+                <ul>
+                  <li>사진-동영상 업로드와 OpenCV 기반 로컬 웹캠 입력 지원</li>
+                  <li>동영상과 웹캠에서는 ByteTrack으로 작업자 ID와 최근 상태 유지</li>
+                  <li>Gradio UI에서 탐지 결과 이미지와 작업자별 안전장비 상태 표 확인</li>
+                </ul>
+                <h4>한계 및 개선 방향</h4>
+                <ul>
+                  <li>마스크, 일반 점퍼, 원거리 헬멧 등 애매한 객체는 오탐 가능성이 존재</li>
+                  <li>미착용 기록 저장, 알림, 관리자 대시보드, CCTV 연동은 향후 확장 과제</li>
+                </ul>
+              </div>
+              <div class="phase-stack">
+                <h4>Stack</h4>
+                <div class="chip-row small"><span>Python</span><span>Ultralytics YOLO</span><span>OpenCV</span><span>ByteTrack</span><span>Gradio</span></div>
+                <h4>Detection Flow</h4>
+                <ol class="mini-flow">
+                  <li>이미지, 영상, 웹캠 프레임을 입력으로 YOLO 추론 수행</li>
+                  <li>Person, Hardhat, NO-Hardhat, Safety Vest, NO-Safety Vest 감지</li>
+                  <li>ByteTrack과 후처리 규칙으로 작업자별 착용 상태 정리</li>
+                </ol>
+                <h4>Field Point</h4>
+                <p>산업현장 적용 시 실시간 알림, 미착용 이력 저장, CCTV 연동까지 확장 가능</p>
+              </div>
+            </section>
+          </div>
+        </article>
+
+        <article class="project-panel theme-subscribe" data-project-panel="subscribe" id="subscribe" role="tabpanel">
           <div class="project-panel-head">
             <div>
               <p class="eyebrow">2026 - AI AGENT</p>
@@ -133,168 +304,6 @@
                   <li>Streamlit 대시보드에서 월 지출, 갱신 임박, 카테고리 비용 확인</li>
                 </ol>
               </div>
-            </section>
-          </div>
-        </article>
-
-        <article class="project-panel theme-ppe" data-project-panel="ppe" id="ppe" role="tabpanel">
-          <div class="project-panel-head">
-            <div>
-              <p class="eyebrow">2026 - COMPUTER VISION</p>
-              <h2>건설현장 PPE 탐지</h2>
-              <p>건설현장 이미지에서 안전모와 안전조끼 착용 여부를 탐지하는 YOLO 기반 시스템</p>
-            </div>
-            <a class="panel-link" href="https://github.com/RyuGPT1/minipr1_7" target="_blank" rel="noopener">GitHub</a>
-          </div>
-
-          <div class="project-phase-list">
-            <section class="project-phase">
-              <div class="phase-copy">
-                <h3><span>1</span>현장 안전 문제 정의</h3>
-                <h4>문제 배경</h4>
-                <ul>
-                  <li>안전모와 안전조끼 착용 여부는 반복 확인이 필요하지만 육안 점검은 누락 가능성이 있음</li>
-                  <li>CCTV가 있어도 미착용 상태를 자동 판별하지 못하면 사후 확인에 그칠 수 있음</li>
-                  <li>작업자 단위로 보호구 미착용 상태를 정리하는 탐지 흐름이 필요</li>
-                </ul>
-                <h4>탐지 클래스</h4>
-                <ul>
-                  <li>Hardhat, NO-Hardhat, Safety Vest, NO-Safety Vest, Person 5개 클래스로 구성</li>
-                </ul>
-              </div>
-              <figure class="project-visual">
-                <img src="../assets/img/projects/ppe-interface.jpg" alt="건설현장 PPE 탐지 시스템 인터페이스">
-                <figcaption>이미지-동영상-웹캠 입력을 한 화면에서 처리하는 PPE 탐지 시스템 인터페이스</figcaption>
-              </figure>
-            </section>
-
-            <section class="project-phase">
-              <div class="phase-copy">
-                <h3><span>2</span>YOLO 추론과 후처리 설계</h3>
-                <h4>구현 방식</h4>
-                <ul>
-                  <li>YOLO 모델로 Person, Hardhat, NO-Hardhat, Safety Vest, NO-Safety Vest 감지</li>
-                  <li>사람 박스 기준으로 헬멧은 상단, 조끼는 몸통 영역의 박스만 상태 후보로 사용</li>
-                  <li>착용/미착용 박스가 겹치면 confidence를 비교해 상태를 정리</li>
-                  <li>조끼 착용 박스는 신뢰도가 낮을 때 색상 기준을 보조로 활용해 오탐을 완화</li>
-                </ul>
-              </div>
-              <div class="phase-note">
-                <strong>핵심 역할</strong>
-                <p>모델 결과를 그대로 보여주지 않고, 안전관리자가 판단하기 쉬운 작업자별 상태로 재구성</p>
-                <ul>
-                  <li>Person 박스 기준으로 보호구 탐지 결과를 작업자별 상태로 묶는 후처리 설계</li>
-                  <li>헬멧은 상단, 조끼는 몸통 영역 중심으로 판단해 오탐을 줄이는 규칙 적용</li>
-                  <li>이미지-영상-웹캠 입력에서 같은 방식으로 결과를 확인하도록 UI 구성</li>
-                </ul>
-              </div>
-            </section>
-
-            <section class="project-phase">
-              <div class="phase-copy">
-                <h3><span>3</span>시연 기능과 한계 분석</h3>
-                <h4>구현 기능</h4>
-                <ul>
-                  <li>사진-동영상 업로드와 OpenCV 기반 로컬 웹캠 입력 지원</li>
-                  <li>동영상과 웹캠에서는 ByteTrack으로 작업자 ID와 최근 상태 유지</li>
-                  <li>Gradio UI에서 탐지 결과 이미지와 작업자별 안전장비 상태 표 확인</li>
-                </ul>
-                <h4>한계 및 개선 방향</h4>
-                <ul>
-                  <li>마스크, 일반 점퍼, 원거리 헬멧 등 애매한 객체는 오탐 가능성이 존재</li>
-                  <li>미착용 기록 저장, 알림, 관리자 대시보드, CCTV 연동은 향후 확장 과제</li>
-                </ul>
-              </div>
-              <div class="phase-stack">
-                <h4>Stack</h4>
-                <div class="chip-row small"><span>Python</span><span>Ultralytics YOLO</span><span>OpenCV</span><span>ByteTrack</span><span>Gradio</span></div>
-                <h4>Detection Flow</h4>
-                <ol class="mini-flow">
-                  <li>이미지, 영상, 웹캠 프레임을 입력으로 YOLO 추론 수행</li>
-                  <li>Person, Hardhat, NO-Hardhat, Safety Vest, NO-Safety Vest 감지</li>
-                  <li>ByteTrack과 후처리 규칙으로 작업자별 착용 상태 정리</li>
-                </ol>
-                <h4>Field Point</h4>
-                <p>현장 적용 시 실시간 알림, 미착용 이력 저장, CCTV 연동까지 확장 가능</p>
-              </div>
-            </section>
-          </div>
-        </article>
-
-        <article class="project-panel theme-loopbin" data-project-panel="loopbin" id="loopbin" role="tabpanel">
-          <div class="project-panel-head">
-            <div>
-              <p class="eyebrow">2026 - AIOT PLATFORM</p>
-              <h2>LoopBin</h2>
-              <p>AIoT 센서, 공공데이터, 예측 모델로 의류 수거함 상태와 수거 우선순위를 관리하는 플랫폼</p>
-            </div>
-            <a class="panel-link" href="https://github.com/RyuGPT1/project_2.0_LoopBin" target="_blank" rel="noopener">GitHub</a>
-          </div>
-
-          <div class="project-phase-list">
-            <section class="project-phase">
-              <div class="phase-copy">
-                <h3><span>1</span>도시 운영 문제 정의</h3>
-                <h4>문제 배경</h4>
-                <ul>
-                  <li>의류 수거함은 위치는 알 수 있지만 적재 상태를 알기 어려워 무단 투기가 발생</li>
-                  <li>정기 순환 방식은 여유 있는 수거함도 방문하고, 포화 직전 수거함은 놓치는 비효율이 있음</li>
-                  <li>실시간 데이터와 예측으로 수거 우선순위를 정하는 운영 체계가 필요</li>
-                </ul>
-                <h4>서비스 목표</h4>
-                <ul>
-                  <li>사용자에게 가까운 수거함 위치, 여유 상태, 대체 거점 제공</li>
-                  <li>운영자에게 포화 위험 예측, 우선 수거 대상, 수거 경로 제공</li>
-                </ul>
-              </div>
-              <figure class="project-visual project-visual-compact">
-                <img src="../assets/img/projects/loopbin-home.jpg" alt="LoopBin 홈 대시보드 화면">
-                <figcaption>실시간 포화 현황, 대체 거점 추천, 운영 요약을 한 화면에 정리한 LoopBin 홈</figcaption>
-              </figure>
-            </section>
-
-            <section class="project-phase">
-              <div class="phase-copy">
-                <h3><span>2</span>시스템 설계와 개인 기여</h3>
-                <h4>담당 역할</h4>
-                <ul>
-                  <li>3인 팀의 팀장으로 백엔드, DB, 시스템 구조 설계 담당</li>
-                  <li>FastAPI 서버 구축, PostgreSQL 데이터 구조 설계, CRUD 흐름 구현</li>
-                  <li>AI 서버 연동, 공공데이터와 지도 API 연결 구조 설계</li>
-                </ul>
-                <h4>아키텍처</h4>
-                <ul>
-                  <li>React 화면, FastAPI 백엔드, AI 서버, PostgreSQL DB를 분리한 구조</li>
-                  <li>백엔드는 프론트엔드, DB, AI 추론, 외부 API를 연결하는 오케스트레이터 역할</li>
-                </ul>
-              </div>
-              <figure class="project-visual project-visual-wide">
-                <img src="../assets/img/projects/loopbin-architecture.jpg" alt="LoopBin 시스템 아키텍처 다이어그램">
-                <figcaption>React, FastAPI, AI 서버, PostgreSQL, 외부 API를 연결한 LoopBin 시스템 구조</figcaption>
-              </figure>
-            </section>
-
-            <section class="project-phase">
-              <div class="phase-copy">
-                <h3><span>3</span>조건 조회와 수거 경로 최적화</h3>
-                <h4>핵심 기능</h4>
-                <ul>
-                  <li>챗봇 질문으로 지역, 포화 기준, 수거 개수를 입력받아 대상 수거함을 조회</li>
-                  <li>예: “대전광역시 서구 50% 이상 상위 10개” 요청 시 우선 수거 대상 10개 반환</li>
-                  <li>조회된 수거함을 지도에 표시하고 방문 순서와 예상 거리, 예상 시간을 계산</li>
-                  <li>Naver Directions 기반 경로 계산으로 실제 수거 동선 설계까지 연결</li>
-                </ul>
-                <h4>기대 효과</h4>
-                <ul>
-                  <li>운영자가 조건을 말로 입력하면 우선순위와 경로를 빠르게 확인 가능</li>
-                  <li>정기 순환 방식에서 포화도 기반의 선별 수거 방식으로 전환 가능</li>
-                  <li>불필요한 이동을 줄이고 포화 위험 지역을 먼저 처리해 운영 효율 개선</li>
-                </ul>
-              </div>
-              <figure class="project-visual project-visual-wide">
-                <img src="../assets/img/projects/loopbin-route.jpg" alt="LoopBin 수거 경로 최적화 화면">
-                <figcaption>대전광역시 서구 50% 이상 상위 10개 수거함을 조회하고 최적 수거 경로를 계산한 화면</figcaption>
-              </figure>
             </section>
           </div>
         </article>

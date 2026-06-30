@@ -139,6 +139,10 @@
 
     const initial = decodeURIComponent(window.location.hash.slice(1)) || projectTabs[0].dataset.projectTab;
     activateProject(initial);
+
+    window.addEventListener('hashchange', () => {
+      activateProject(decodeURIComponent(window.location.hash.slice(1)));
+    });
   }
 
   const experienceList = document.querySelector('[data-experience-list]');
