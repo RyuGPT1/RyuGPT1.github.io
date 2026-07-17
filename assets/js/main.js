@@ -145,6 +145,20 @@
     });
   }
 
+  const languageLinks = Array.from(document.querySelectorAll('[data-language-base]'));
+
+  function syncLanguageLinks() {
+    languageLinks.forEach((link) => {
+      const base = link.dataset.languageBase;
+      if (base) link.href = base + (window.location.hash || '');
+    });
+  }
+
+  if (languageLinks.length) {
+    syncLanguageLinks();
+    window.addEventListener('hashchange', syncLanguageLinks);
+  }
+
   const experienceList = document.querySelector('[data-experience-list]');
   const experienceToggle = document.querySelector('[data-experience-toggle]');
 
@@ -152,7 +166,9 @@
     experienceToggle.addEventListener('click', () => {
       const isCollapsed = experienceList.classList.toggle('is-collapsed');
       experienceToggle.setAttribute('aria-expanded', isCollapsed ? 'false' : 'true');
-      experienceToggle.querySelector('span').textContent = isCollapsed ? '전체보기' : '접기';
+      const collapsedLabel = experienceToggle.dataset.collapsedLabel || '전체보기';
+      const expandedLabel = experienceToggle.dataset.expandedLabel || '접기';
+      experienceToggle.querySelector('span').textContent = isCollapsed ? collapsedLabel : expandedLabel;
     });
   }
 

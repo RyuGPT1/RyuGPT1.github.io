@@ -11,18 +11,24 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800&display=swap">
-  <link rel="stylesheet" href="./assets/css/style.css">
+  <link rel="stylesheet" href="./assets/css/style.css?v=20260717b">
 </head>
 <body>
   <header class="site-header">
     <div class="header-inner">
       <a class="brand" href="#home">Donghyeon Ryu</a>
-      <nav class="primary-nav" aria-label="Primary navigation">
-        <a href="#home">Home</a>
-        <a href="#skills">Skills</a>
-        <a href="#projects">Projects</a>
-        <a href="#experience">Experience</a>
-      </nav>
+      <div class="header-controls">
+        <nav class="primary-nav" aria-label="Primary navigation">
+          <a href="#home">Home</a>
+          <a href="#skills">Skills</a>
+          <a href="#projects">Projects</a>
+          <a href="#experience">Experience</a>
+        </nav>
+        <div class="language-switch" aria-label="언어 선택">
+          <a class="active" href="./index.html" lang="ko" aria-current="page">KO</a>
+          <a href="./en/index.html" lang="en">EN</a>
+        </div>
+      </div>
     </div>
   </header>
 
@@ -56,11 +62,11 @@
               </svg>
               <span>Resume</span>
             </a>
-            <a href="./resume/en/index.html" aria-label="English Resume">
+            <a href="./resume/en/index.html" aria-label="Technical Resume">
               <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
                 <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8l-6-6zm-1 7V3.5L18.5 9H13zM7.5 12h9v1.4h-9zm0 3h9v1.4h-9zm0 3h6v1.4h-6z"/>
               </svg>
-              <span>English Resume</span>
+              <span>Technical Resume</span>
             </a>
           </div>
         </div>
@@ -381,7 +387,7 @@
             </div>
           </article>
         </div>
-        <button class="experience-toggle" type="button" data-experience-toggle aria-expanded="false">
+        <button class="experience-toggle" type="button" data-experience-toggle data-collapsed-label="전체보기" data-expanded-label="접기" aria-expanded="false">
           <span>전체보기</span>
           <span class="toggle-arrow" aria-hidden="true"></span>
         </button>
@@ -420,6 +426,6 @@
     <div class="container">© <span id=""></span> Donghyeon Ryu</div>
   </footer>
 
-  <script src="./assets/js/main.js"></script>
+  <script src="./assets/js/main.js?v=20260717b"></script>
 </body>
 </html>

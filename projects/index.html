@@ -8,19 +8,24 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800&display=swap">
-  <link rel="stylesheet" href="../assets/css/style.css">
+  <link rel="stylesheet" href="../assets/css/style.css?v=20260717b">
 </head>
 <body>
   <header class="site-header">
     <div class="header-inner">
       <a class="brand" href="../index.html">Donghyeon Ryu</a>
-      <nav class="primary-nav" aria-label="Primary navigation">
-        <a href="../index.html">Home</a>
-        <a href="../index.html#skills">Skills</a>
-        <a href="../index.html#projects" class="active">Projects</a>
-        <a href="../index.html#experience">Experience</a>
-        <a href="../index.html#contact">Contact</a>
-      </nav>
+      <div class="header-controls">
+        <nav class="primary-nav" aria-label="Primary navigation">
+          <a href="../index.html">Home</a>
+          <a href="../index.html#skills">Skills</a>
+          <a href="../index.html#projects" class="active">Projects</a>
+          <a href="../index.html#experience">Experience</a>
+        </nav>
+        <div class="language-switch" aria-label="언어 선택">
+          <a class="active" href="./index.html" data-language-base="./index.html" lang="ko" aria-current="page">KO</a>
+          <a href="../en/projects/index.html" data-language-base="../en/projects/index.html" lang="en">EN</a>
+        </div>
+      </div>
     </div>
   </header>
 
@@ -335,6 +340,6 @@
     <div class="container">© <span id="year"></span> Donghyeon Ryu</div>
   </footer>
 
-  <script src="../assets/js/main.js"></script>
+  <script src="../assets/js/main.js?v=20260717b"></script>
 </body>
 </html>
